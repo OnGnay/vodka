@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>地图</title>
+		<link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+		<link rel="stylesheet" href="css/amap.css" />
+		<style>
+			html,
+			body,
+			#container {
+				height: 100%;
+			}
+			
+			#panel {
+				position: fixed;
+				max-height: 90%;
+				overflow-y: auto;
+				height: auto;
+				max-height: 50%;
+				bottom: 0px;
+				width: 100%;
+			}
+			
+			#panel .amap-call {
+				background-color: #009cf9;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			
+			#panel .amap-lib-walking {
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				overflow: hidden;
+			}
+			
+			#panel2 {
+				position: absolute;
+				background-color: white;
+				max-height: 90%;
+				overflow-y: auto;
+				top: 80px;
+				right: 1rem;
+				width: 60%;
+			}
+			
+			.btn {
+				background: #FFFFFF;
+				line-height: 1.5;
+			}
+			
+			.info {
+				left: 1rem;
+				right: 1rem;
+			}
+			
+			#find {
+				border-radius: 2px;
+				border-left: none;
+				border-color: #ced4da;
+				height: calc(2.2rem + 2px);
+			}
+			
+			#tipinput {
+				width: 40%;
+			}
+		</style>
+
+		<body>
+			<div id='container'></div>
+
+			<div class="input-card" style="width:20%; top: 80px;left: auto; bottom: auto;right: 1rem;background: none;box-shadow: none;">
+				<button class="btn" id="add-satellite-layer" style="margin:0 0 1rem 0;">卫星</button>
+				<button class="btn" id="clear-all-layer" style="margin:0 0 1rem 0;">经典</button>
+			</div>
+			<!--搜索框-->
+			<div class="info">
+				<div class="input-item">
+					<select id="findKind">
+						<option selected="selected" value="0">更多</option>
+						< <option value="1">附近美食</option>
+							<option value="2">附近景点</option>
+							<option value="3">附近酒店</option>
+					</select>
+					<input id='tipinput' type="text" placeholder="搜索地点..">
+					<button class="btn" id="find">搜索</button>
+				</div>
+			</div>
+
+			<!--搜索结果-->
+			<div id="panel2"></div>
+
+			<!--导航-->
+			<div id="panel"></div>
+
+			<script type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+			<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=51175f2323eeace55f9ed1bad3caaadf"></script>
+			<script type="text/javascript" src="js/app.js"></script>
+			<script type="text/javascript" src="js/location.js"></script>
+			<script type="text/javascript" src="js/find.js"></script>
+			<script type="text/javascript" src="js/navigation.js"></script>
+		</body>
+
+</html>
